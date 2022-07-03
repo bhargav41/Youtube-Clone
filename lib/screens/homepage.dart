@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Model/dataset_model.dart';
 import 'package:flutter_application_1/Model/videoModel.dart';
+import 'package:flutter_application_1/screens/search_screen.dart';
 import 'package:flutter_application_1/services/video.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:convert';
@@ -39,11 +40,16 @@ class _HomePageState extends State<HomePage> {
                 height: 20.0,
               ),
             ),
-            SvgPicture.asset(
-              "assets/search.svg",
-              color: Colors.white,
-              width: 20.0,
-              height: 20.0,
+            InkWell(
+              onTap: () {
+                showSearch(context: context, delegate: SearchScreen());
+              },
+              child: SvgPicture.asset(
+                "assets/search.svg",
+                color: Colors.white,
+                width: 20.0,
+                height: 20.0,
+              ),
             ),
             Container(
               padding: const EdgeInsets.only(left: 20.0, right: 15.0),
